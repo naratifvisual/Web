@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaratifVisual - Sewa Equipment Mudah dan Murah</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Kustom -->
+    <style>
+        :root {
+            --primary-color: #1a472a;    /* Hijau gelap utama */
+            --secondary-color: #0d2818;   /* Hijau lebih gelap */
+            --accent-color: #2d5a27;      /* Hijau medium untuk aksen */
+            --light-green: #ffffff;       /* Hijau terang untuk hover */
+            --text-dark: #1a1a1a;         /* Hitam untuk teks */
+            --text-light: #ffffff;        /* Putih untuk teks */
+            --bg-light: #ffffff;          /* Putih untuk background */
+            --bg-dark: #0a1f14;           /* Hijau gelap untuk background */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 76px;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        /* LOGO */
+        .logo {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .navbar {
+            box-shadow: 0 4px 12px rgba(26, 71, 42, 0.1);
+            background-color: var(--bg-light) !important;
+            border-bottom: 1px solid #e8f5e9;
+        }
+
+        .nav-link {
+            color: var(--primary-color) !important;
+            font-weight: 500;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-color) !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+
+        /* PROMO SECTION */
+        .promo-section {
+            background-color: #f9fff9;
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+
+        .promo-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(26, 71, 42, 0.15);
+            transition: transform 0.3s ease;
+            border: none;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .promo-img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            background-color: #f1f8f1;
+        }
+
+        .promo-content {
+            padding: 30px;
+        }
+
+        .promo-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #e8f5e9;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            background-color: var(--bg-light);
+            box-shadow: 0 5px 15px rgba(26, 71, 42, 0.08);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(26, 71, 42, 0.15);
+            border-color: var(--light-green);
+        }
+
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .product-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .product-price-period {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .btn-rent {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 8px;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-rent:hover {
+            background-color: var(--text-light);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-promo {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 8px;
+            border: 2px solid var(--accent-color);
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .btn-promo:hover {
+            background-color: var(--text-light);
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 8px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+            color: white;
+        }
+
+        .btn-light {
+            background-color: var(--text-light);
+            color: var(--primary-color);
+            border: 2px solid var(--text-light);
+        }
+
+        .btn-light:hover {
+            background-color: transparent;
+            color: var(--text-light);
+            border-color: var(--text-light);
+        }
+
+        footer {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin-top: 80px;
+        }
+
+        /* FOOTER STYLE PERBAIKAN */
+        .footer-logo {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white !important; /* Pastikan putih semua */
+        }
+        
+        .footer-logo span {
+            color: white !important; /* Span juga putih */
+        }
+
+        .category-badge {
+            background-color: #f1f8f1;
+            border: 2px solid #e8f5e9;
+            border-radius: 20px;
+            padding: 8px 18px;
+            margin: 5px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .category-badge:hover, .category-badge.active {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border-color: var(--primary-color);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* FLOATING CART ICON */
+        .floating-cart {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(26, 71, 42, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .floating-cart:hover {
+            transform: scale(1.1);
+            background-color: var(--accent-color);
+            box-shadow: 0 6px 20px rgba(26, 71, 42, 0.4);
+        }
+
+        .floating-cart i {
+            font-size: 24px;
+        }
+
+        .floating-cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        .modal-header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .modal-content {
+            border: 1px solid #e8f5e9;
+        }
+
+        .card {
+            border: 1px solid #e8f5e9;
+            background-color: var(--bg-light);
+        }
+
+        .border {
+            border-color: #e8f5e9 !important;
+        }
+
+        .table {
+            color: var(--text-dark);
+        }
+
+        .table thead th {
+            background-color: #f1f8f1;
+            color: var(--primary-color);
+            border-bottom: 2px solid #e8f5e9;
+        }
+
+        .badge.bg-secondary {
+            background-color: var(--light-green) !important;
+            color: white;
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-outline-secondary {
+            border-color: #e8f5e9;
+            color: var(--primary-color);
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        /* Warna berbeda untuk setiap heading */
+        h1 {
+            color: var(--primary-color); /* #1a472a - Hijau gelap utama */
+        }
+
+        h2 {
+            color: #0d2818; /* Hijau lebih gelap dari h1 */
+        }
+
+        h3 {
+            color: #2d5a27; /* Hijau medium */
+        }
+
+        h4 {
+            color: #4a7856; /* Hijau terang */
+        }
+
+        h5 {
+            color: #5d8c66; /* Hijau lebih terang */
+        }
+
+        h6 {
+            color: #709d7a; /* Hijau paling terang */
+        }
+
+        /* Pengecualian untuk hero section */
+        .hero-section h1,
+        .hero-section .display-4 {
+            color: white !important;
+        }
+
+        /* Pengecualian untuk footer - SEMUA HEADING PUTIH */
+        footer h4,
+        footer h5,
+        footer .logo,
+        footer .logo span {
+            color: white !important;
+        }
+
+        .text-white {
+            color: var(--text-light) !important;
+        }
+
+        .text-decoration-none {
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+
+        .text-decoration-none:hover {
+            color: #a5d6a7 !important;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .alert-warning {
+            background-color: #fff3cd;
+            border-color: #ffeaa7;
+            color: #856404;
+        }
+
+        .alert-info {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            color: #0c5460;
+        }
+
+        hr.bg-light {
+            background-color: #2d5a27 !important;
+            height: 2px;
+            opacity: 0.5;
+        }
+
+        /* Responsif untuk mobile */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 66px;
+            }
+            
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .promo-section {
+                padding: 40px 0;
+            }
+            
+            .promo-content {
+                padding: 20px;
+            }
+            
+            .product-card {
+                margin-bottom: 20px;
+            }
+            
+            .category-badge {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+            
+            /* Footer responsif */
+            .footer-col {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            
+            .footer-social {
+                justify-content: center;
+            }
+
+            .floating-cart {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .floating-cart i {
+                font-size: 20px;
+            }
+
+            .floating-cart-badge {
+                width: 20px;
+                height: 20px;
+                font-size: 12px;
+            }
+        }
+        
+        /* Tampilan desktop footer yang seimbang */
+        @media (min-width: 992px) {
+            .footer-col {
+                padding: 0 30px;
+            }
+            
+            .footer-col-1 {
+                text-align: right;
+            }
+            
+            .footer-col-2 {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="#">
+                <img src="LOGO_BLACK_REGULAR_BESAR-01.png" alt="NaratifVisual Logo" height="40">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#promo">Promo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categories">Kategori</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Cart Icon -->
+    <div class="floating-cart" onclick="openCartModal()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="floating-cart-badge" id="floatingCartCount">0</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold">Sewa Equipment Shooting Mahasiswa Friendly</h1>
+                    <p class="lead">Temukan berbagai equipment shooting untuk disewa dengan harga terjangkau. Production value jutaan dengan harga ratusan.</p>
+                    <a href="#products" class="btn btn-light btn-lg mt-3">Lihat Equipment <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="Untitled design-3.png" alt="NaratifVisual" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section - HANYA 2 PROMO UTAMA -->
+    <section class="promo-section" id="promo">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold">Promo Spesial Mahasiswa</h2>
+                    <p class="lead">Dapatkan penawaran terbaik untuk kebutuhan shooting Anda!</p>
+                </div>
+            </div>
+            
+            <!-- PROMO 1 -->
+            <div class="row mb-5">
+                <div class="col-lg-10 mx-auto">
+                    <div class="promo-card">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <!-- TEMPAT UNTUK FOTO BROSUR PROMO 1 -->
+                                <img src="2333181E-4E8C-4DAE-B647-FA0E96DB0271.png" alt="Promo Pertama NaratifVisual" class="promo-img">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="promo-content">
+                                    <span class="promo-badge">PROMO 3 HARI</span>
+                                    <h3 class="fw-bold mb-3">Shooting dengan equipment lengkap selama 3 hari</h3>
+                                    <p class="mb-4">Dapatkan semua equipment yang Anda butuhkan dalam satu paket lengkap dengan harga spesial:</p>
+                                    
+                                    <ul class="mb-4">
+                                        <li class="mb-2">✅ Penyewaan minimal 3 hari</li>
+                                        <li class="mb-2">✅ Free konsultasi penggunaan equipment</li>
+                                        <li class="mb-2">✅ Pendampingan langsung di lokasi shooting</li>
+                                        <li class="mb-2">✅ Free delivery untuk area Surabaya</li>
+                                      
+                                    </ul>
+                                    
+                                    <p class="text-muted mb-4"><small>*Syarat dan ketentuan berlaku*</small></p>
+                                    
+                                    <div class="d-flex gap-3 flex-wrap">
+                                        <a href="#products" class="btn btn-promo">
+                                            <i class="fas fa-calendar-check me-2"></i> Lihat Detail Equipment
+                                        </a>
+                                        <a href="https://wa.me/628813564384?text=Hai,%20aku%20mau%20konsultasi%20tentang%20promo" 
+                                           target="_blank" class="btn btn-outline-secondary">
+                                            <i class="fab fa-whatsapp me-2"></i> Konsultasi Gratis
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PROMO 2 -->
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="promo-card">
+                        <div class="row g-0 flex-lg-row-reverse">
+                            <div class="col-lg-6">
+                                <!-- TEMPAT UNTUK FOTO BROSUR PROMO 2 -->
+                                <img src="2333181E-4E8C-4DAE-B647-FA0E96DB0271.png" alt="Promo Kedua NaratifVisual" class="promo-img">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="promo-content">
+                                    <span class="promo-badge">PROMO 1 HARI</span>
+                                    <h3 class="fw-bold mb-3">Shooting dengan equipment lengkap selama 1 hari</h3>
+                                    <p class="mb-4">Dapatkan semua equipment yang Anda butuhkan dalam satu paket lengkap dengan harga spesial:</p>
+                                    
+                                    <ul class="mb-4">
+                                        <li class="mb-2">✅ Penyewaan minimal 1 hari</li>
+                                        <li class="mb-2">✅ Free konsultasi penggunaan equipment</li>
+                                        <li class="mb-2">✅ Pendampingan langsung di lokasi shooting</li>
+                                        <li class="mb-2">✅ Free delivery untuk area Surabaya</li>
+                                    </ul>
+                                    
+                                    <p class="text-muted mb-4"><small>*Syarat dan ketentuan berlaku*</small></p>
+                                    
+                                    <div class="d-flex gap-3 flex-wrap">
+                                        <a href="#products" class="btn btn-promo">
+                                            <i class="fas fa-box me-2"></i> Lihat Detail Equipment
+                                        </a>
+                                        <a href="https://wa.me/628813564384?text=Hai,%20aku%20mau%20konsultasi%20tentang%20promo" 
+                                           target="_blank" class="btn btn-outline-secondary">
+                                            <i class="fab fa-whatsapp me-2"></i> Tanya Detail
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="container mb-5" id="categories">
+        <h2 class="text-center mb-4">Jenis Equipment</h2>
+        <div class="text-center mb-5">
+            <span class="category-badge active" data-category="all">Semua</span>
+            <span class="category-badge" data-category="tools">Kamera</span>
+            <span class="category-badge" data-category="electronics">Lensa</span>
+            <span class="category-badge" data-category="party">Stabilizer</span>
+            <span class="category-badge" data-category="sports">Lighting</span>
+            <span class="category-badge" data-category="other">Lainnya</span>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="container mb-5" id="products">
+        <h2 class="text-center mb-5">Equipment Tersedia untuk Disewa</h2>
+        
+        <div class="row" id="productList">
+            <!-- Produk akan dimuat dari JavaScript -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="container mb-5" id="about">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5">
+                        <h2 class="text-center mb-4">Tentang Naratif Visual</h2>
+                        <p>Naratif Visual adalah platform penyewaan equipment yang bertujuan untuk memudahkan mahasiswa dalam produksi kreatif dengan harga terjangkau. Kami menyediakan berbagai macam equipment dengan production value tinggi.</p>
+                        <p>Naratif Visual juga menyediakan pendampingan langsung untuk penggunaan equipment secara langsung di lokasi shooting. Membuka jalan untuk kolaborasi dan membuka ide-ide baru.</p>
+                        <div class="text-center mt-4">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="p-3 border rounded">
+                                        <i class="fas fa-shield-alt fa-2x text-primary mb-3"></i>
+                                        <h5>Terpercaya</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="p-3 border rounded">
+                                        <i class="fas fa-tags fa-2x text-primary mb-3"></i>
+                                        <h5>Mahasiswa Friendly</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="p-3 border rounded">
+                                        <i class="fas fa-clock fa-2x text-primary mb-3"></i>
+                                        <h5>Fleksibel</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Kolom 1: Logo dan Deskripsi (KANAN) -->
+                <div class="col-lg-5 col-md-6 mb-4 footer-col footer-col-1">
+                    <h4 class="footer-logo mb-3">Naratif<span>Visual</span></h4>
+                    <p class="mb-4">Platform penyewaan equipment untuk segala kebutuhan shooting dengan harga terjangkau khusus mahasiswa.</p>
+                    <div class="footer-social d-flex">
+                        <!-- Ikon sosial media bisa ditambahkan di sini jika diperlukan -->
+                    </div>
+                </div>
+                
+                <!-- Kolom 2: Kontak (KIRI) -->
+                <div class="col-lg-5 col-md-6 mb-4 footer-col footer-col-2">
+                    <h5 class="mb-4">Hubungi Kami</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="fas fa-map-marker-alt me-3 mt-1"></i>
+                            <span>Surabaya, Indonesia</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-phone me-3"></i>
+                            <span>0881-3564-384</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-envelope me-3"></i>
+                            <span>naratifvisual99@gmail.com</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-clock me-3"></i>
+                            <span>Senin - Minggu: 08:00 - 22:00 WIB</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="bg-light my-4">
+            
+            <div class="text-center pt-3">
+                <p class="mb-0">&copy; 2025 NaratifVisual. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Keranjang Sewa Anda</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Equipment</th>
+                                    <th>Harga/hari</th>
+                                    <th>Jumlah Barang</th>
+                                    <th>Subtotal</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartItems">
+                                <!-- Item keranjang akan dimuat dari JavaScript -->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="text-end fw-bold">Total:</td>
+                                    <td class="fw-bold" id="cartTotal">Rp 0</td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div id="emptyCartMessage" class="text-center py-5">
+                        <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
+                        <h5>Keranjang sewa Anda kosong</h5>
+                        <p class="text-muted">Tambahkan equipment dari katalog kami</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-whatsapp" id="whatsappCheckoutBtn">
+                        <i class="fab fa-whatsapp me-2"></i> Checkout via WhatsApp
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript Kustom -->
+    <script>
+        // DATA PRODUK
+        const products = [
+            {
+                id: 1,
+                name: "Kamera Sony ZV-E10",
+                description: "Kamera APSC Sony. Menawarkan resolusi 4k dan AutoFokus cepat dengan body compact.",
+                price: 80000,
+                category: "tools",
+                image: "Sony Alpha ZV-E10 - APS-C Interchangeable Lens Mirrorless Vlog Camera Kit - Black, ZVE10KB.jpg",
+                stock: 1
+            },
+            {
+                id: 2,
+                name: "Lensa Viltrox 27mm f 1.2 Pro Series",
+                description: "Lensa Kamera Viltrox 27mm ini menawarkan kualitas gambar yang luar biasa, bokeh yang indah, dan kinerja autofokus yang cepat dan akurat",
+                price: 60000,
+                category: "electronics",
+                image: "VILTROX PRO 27mm F1_2 XF Auto Focus APS-C Lens for Fuji X-Mount Cameras.jpg",
+                stock: 1
+            },
+            {
+                id: 3,
+                name: "Stabilizer Feiyu Scorp 2",
+                description: "Stabilizer dengan AI Tracking, mampu memberikan footage yang lebih stabil dan unik.",
+                price: 100000,
+                category: "party",
+                image: "FeiyuTech Scorp F2, 3 Axis Handheld Camera Gimbal Stabiliser.jpg",
+                stock: 1
+            },
+            {
+                id: 4,
+                name: "Lighting Inbex IP80 ",
+                description: "Lighting dengan cahaya terang mampu memberikan kesan cold hingga warm.",
+                price: 40000,
+                category: "sports",
+                image: "lampu anjay.jpg",
+                stock: 1
+            },
+            {
+                id: 5,
+                name: "Tripod JETE",
+                description: "Tripod untuk menjaga video tetap stabil.",
+                price: 30000,
+                category: "other",
+                image: "Tripods PNG Picture, Tripod, Photography, Phone Tripod PNG Image For Free Download.jpg",
+                stock: 1
+            },
+            {
+                id: 6,
+                name: "Baterai NP-FW50 Sony",
+                description: "Baterai untuk kamera APS-C Sony.",
+                price: 20000,
+                category: "other",
+                image: "Sony NP-FZ100 Battery Pack | Digital Camera Batteries.jpg",
+                stock: 3
+            },
+            {
+                id: 7,
+                name: "Clapper Tuff Studio",
+                description: "Clapper untuk memudahkan post produksi.",
+                price: 20000,
+                category: "other",
+                image: "Clap pour tournage.jpg",
+                stock: 1
+            },
+            {
+                id: 8,
+                name: "Mic Boya MM-1",
+                description: "Mic untuk merekam audio yang lebih jelas.",
+                price: 30000,
+                category: "other",
+                image: "RODE VideoMicro II VMICROII Replacement for RODE VideoMicro VIDEOMICRO.jpg",
+                stock: 1
+            }
+        ];
+
+        // State aplikasi
+        let cart = [];
+        let currentCategory = "all";
+
+        // Format mata uang Rupiah
+        function formatRupiah(amount) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(amount);
+        }
+
+        // Render produk ke halaman
+        function renderProducts() {
+            const productList = document.getElementById('productList');
+            productList.innerHTML = '';
+            
+            // Filter produk berdasarkan kategori
+            let filteredProducts = products;
+            if (currentCategory !== 'all') {
+                filteredProducts = products.filter(product => product.category === currentCategory);
+            }
+            
+            // Render setiap produk
+            filteredProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'col-md-6 col-lg-3 mb-4';
+                productCard.innerHTML = `
+                    <div class="card product-card">
+                        <img src="${product.image}" class="card-img-top product-img" alt="${product.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                            <p class="card-text text-muted">${product.description}</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div>
+                                    <span class="product-price">${formatRupiah(product.price)}</span>
+                                    <span class="product-price-period">/hari</span>
+                                </div>
+                                <span class="badge bg-secondary">Stok: ${product.stock}</span>
+                            </div>
+                            <button class="btn btn-rent w-100 mt-3" onclick="addToCart(${product.id})">
+                                <i class="fas fa-cart-plus me-2"></i> Tambah ke Keranjang
+                            </button>
+                        </div>
+                    </div>
+                `;
+                productList.appendChild(productCard);
+            });
+        }
+
+        // Tambah produk ke keranjang
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            // Cek apakah produk sudah ada di keranjang
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                // Jika sudah ada, tambah jumlahnya
+                if (existingItem.quantity < product.stock) {
+                    existingItem.quantity++;
+                    showAlert('success', `Ditambahkan: ${product.name} (${existingItem.quantity} hari)`);
+                } else {
+                    showAlert('warning', `Stok ${product.name} tidak mencukupi!`);
+                    return;
+                }
+            } else {
+                // Jika belum ada, tambah item baru
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    quantity: 1,
+                    image: product.image
+                });
+                showAlert('success', `${product.name} ditambahkan ke keranjang`);
+            }
+            
+            updateCart();
+        }
+
+        // Hapus item dari keranjang
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+            showAlert('info', 'Produk dihapus dari keranjang');
+        }
+
+        // Update keranjang
+        function updateCart() {
+            // Update jumlah item di badge navbar
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cartCount').textContent = totalItems;
+            
+            // Update jumlah item di floating cart
+            document.getElementById('floatingCartCount').textContent = totalItems;
+            
+            // Update daftar item di modal
+            const cartItems = document.getElementById('cartItems');
+            const emptyCartMessage = document.getElementById('emptyCartMessage');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '';
+                emptyCartMessage.style.display = 'block';
+                cartTotal.textContent = formatRupiah(0);
+                return;
+            }
+            
+            emptyCartMessage.style.display = 'none';
+            cartItems.innerHTML = '';
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px;" class="me-3">
+                            <span>${item.name}</span>
+                        </div>
+                    </td>
+                    <td>${formatRupiah(item.price)}</td>
+                    <td>
+                        <div class="input-group input-group-sm" style="width: 120px;">
+                            <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(${item.id}, -1)">-</button>
+                            <input type="text" class="form-control text-center" value="${item.quantity}" readonly>
+                            <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(${item.id}, 1)">+</button>
+                        </div>
+                    </td>
+                    <td>${formatRupiah(subtotal)}</td>
+                    <td>
+                        <button class="btn btn-sm btn-danger" onclick="removeFromCart(${item.id})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                cartItems.appendChild(row);
+            });
+            
+            cartTotal.textContent = formatRupiah(total);
+        }
+
+        // Update jumlah item di keranjang
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (!item) return;
+            
+            const product = products.find(p => p.id === productId);
+            
+            const newQuantity = item.quantity + change;
+            
+            if (newQuantity < 1) {
+                removeFromCart(productId);
+                return;
+            }
+            
+            if (newQuantity > product.stock) {
+                showAlert('warning', `Stok ${product.name} tidak mencukupi!`);
+                return;
+            }
+            
+            item.quantity = newQuantity;
+            updateCart();
+        }
+
+        // Fungsi untuk checkout ke WhatsApp
+        function checkoutToWhatsApp() {
+            if (cart.length === 0) {
+                showAlert('warning', 'Keranjang sewa kosong!');
+                return;
+            }
+
+            // Data pemesanan
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            
+            // Format pesan untuk WhatsApp
+            let message = `Halo NaratifVisual, saya ingin menyewa equipment berikut:\n\n`;
+            
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.name}\n`;
+                message += `   Durasi: ${item.quantity} hari\n`;
+                message += `   Harga/hari: ${formatRupiah(item.price)}\n`;
+                message += `   Subtotal: ${formatRupiah(item.price * item.quantity)}\n\n`;
+            });
+            
+            message += `Total Equipment: ${totalItems} item\n`;
+            message += `Total Biaya: ${formatRupiah(totalPrice)}\n\n`;
+            message += `Saya tertarik untuk melanjutkan pemesanan.`;
+            
+            // Encode pesan untuk URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Nomor WhatsApp NaratifVisual
+            const phoneNumber = "628813564384";
+            
+            // Buat URL WhatsApp
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Buka WhatsApp di tab baru
+            window.open(whatsappUrl, '_blank');
+            
+            // Tampilkan konfirmasi
+            showAlert('success', 'Membuka WhatsApp untuk melanjutkan pemesanan...');
+            
+            // Kosongkan keranjang setelah checkout
+            setTimeout(() => {
+                cart = [];
+                updateCart();
+                
+                // Tutup modal
+                const cartModal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
+                cartModal.hide();
+            }, 1000);
+        }
+
+        // Fungsi untuk membuka modal keranjang dari floating cart
+        function openCartModal() {
+            const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
+            cartModal.show();
+        }
+
+        // Tampilkan alert
+        function showAlert(type, message) {
+            // Hapus alert yang ada
+            const existingAlert = document.querySelector('.alert-dismissible');
+            if (existingAlert) existingAlert.remove();
+            
+            // Buat alert baru
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            alert.style.cssText = 'top: 80px; right: 20px; z-index: 1050; min-width: 300px;';
+            alert.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.body.appendChild(alert);
+            
+            // Auto dismiss setelah 3 detik
+            setTimeout(() => {
+                if (alert.parentNode) alert.parentNode.removeChild(alert);
+            }, 3000);
+        }
+
+        // Filter produk berdasarkan kategori
+        function setupCategoryFilter() {
+            const categoryBadges = document.querySelectorAll('.category-badge');
+            
+            categoryBadges.forEach(badge => {
+                badge.addEventListener('click', function() {
+                    // Hapus class active dari semua badge
+                    categoryBadges.forEach(b => b.classList.remove('active'));
+                    
+                    // Tambah class active ke badge yang diklik
+                    this.classList.add('active');
+                    
+                    // Update kategori saat ini
+                    currentCategory = this.getAttribute('data-category');
+                    
+                    // Render ulang produk
+                    renderProducts();
+                });
+            });
+        }
+
+        // Inisialisasi saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            // Render produk pertama kali
+            renderProducts();
+            
+            // Setup filter kategori
+            setupCategoryFilter();
+            
+            // Setup tombol WhatsApp checkout
+            document.getElementById('whatsappCheckoutBtn').addEventListener('click', function() {
+                checkoutToWhatsApp();
+            });
+            
+            // Smooth scroll untuk navigasi
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
