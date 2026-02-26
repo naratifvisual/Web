@@ -196,6 +196,19 @@
             border-color: var(--text-light);
         }
 
+        /* RENTAL FOCUS BADGE */
+        .rental-focus-badge {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(26, 71, 42, 0.2);
+        }
+
         /* PORTOFOLIO SECTION - VERSI SEDERHANA */
         .portfolio-section {
             padding: 80px 0;
@@ -243,11 +256,6 @@
             font-weight: 600;
             margin: 20px 0;
             box-shadow: 0 5px 15px rgba(26, 71, 42, 0.2);
-        }
-
-        .collaboration-badge i {
-            margin-right: 10px;
-            font-size: 1.5rem;
         }
 
         .btn-portfolio {
@@ -313,11 +321,11 @@
         .footer-logo {
             font-weight: 700;
             font-size: 1.8rem;
-            color: white !important; /* Pastikan putih semua */
+            color: white !important;
         }
         
         .footer-logo span {
-            color: white !important; /* Span juga putih */
+            color: white !important;
         }
 
         .category-badge {
@@ -485,7 +493,7 @@
             color: white !important;
         }
 
-        /* Pengecualian untuk footer - SEMUA HEADING PUTIH */
+        /* Pengecualian untuk footer */
         footer h4,
         footer h5,
         footer .logo,
@@ -528,6 +536,23 @@
             background-color: #2d5a27 !important;
             height: 2px;
             opacity: 0.5;
+        }
+
+        /* RENTAL SECTION HIGHLIGHT */
+        .rental-highlight {
+            position: relative;
+        }
+
+        .rental-highlight::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 4px;
         }
 
         /* Responsif untuk mobile */
@@ -647,16 +672,13 @@
                         <a class="nav-link active" href="#home">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#products">Produk</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#promo">Promo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portofolio</a>
+                        <a class="nav-link" href="#categories">Kategori</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#categories">Kategori</a>
+                        <a class="nav-link" href="#portfolio">Portofolio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">Tentang Kami</a>
@@ -694,11 +716,14 @@
         </div>
     </section>
 
-    <!-- Promo Section - HANYA 2 PROMO UTAMA -->
+    <!-- Promo Section - FOKUS UTAMA PERTAMA -->
     <section class="promo-section" id="promo">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
+                    <span class="rental-focus-badge">
+                        <i class="fas fa-tag me-2"></i> PROMO SPESIAL
+                    </span>
                     <h2 class="fw-bold">Promo Spesial Mahasiswa</h2>
                     <p class="lead">Dapatkan penawaran terbaik untuk kebutuhan shooting Anda!</p>
                 </div>
@@ -710,13 +735,12 @@
                     <div class="promo-card">
                         <div class="row g-0">
                             <div class="col-lg-6">
-                                <!-- TEMPAT UNTUK FOTO BROSUR PROMO 1 -->
                                 <img src="2333181E-4E8C-4DAE-B647-FA0E96DB0271.png" alt="Promo Pertama NaratifVisual" class="promo-img">
                             </div>
                             <div class="col-lg-6">
                                 <div class="promo-content">
                                     <span class="promo-badge">PROMO 3 HARI</span>
-                                    <h3 class="fw-bold mb-3">Shooting dengan equipment lengkap selama 3 hari</h3>
+                                    <h3 class="fw-bold mb-3">Paket Sewa 3 Hari</h3>
                                     <p class="mb-4">Dapatkan semua equipment yang Anda butuhkan dalam satu paket lengkap dengan harga spesial:</p>
                                     
                                     <ul class="mb-4">
@@ -724,18 +748,17 @@
                                         <li class="mb-2">✅ Free konsultasi penggunaan equipment</li>
                                         <li class="mb-2">✅ Pendampingan langsung di lokasi shooting</li>
                                         <li class="mb-2">✅ Free delivery untuk area Surabaya</li>
-                                      
                                     </ul>
                                     
                                     <p class="text-muted mb-4"><small>*Syarat dan ketentuan berlaku*</small></p>
                                     
                                     <div class="d-flex gap-3 flex-wrap">
                                         <a href="#products" class="btn btn-promo">
-                                            <i class="fas fa-calendar-check me-2"></i> Lihat Detail Equipment
+                                            <i class="fas fa-calendar-check me-2"></i> Lihat Equipment
                                         </a>
                                         <a href="https://wa.me/628813564384?text=Hai,%20aku%20mau%20konsultasi%20tentang%20promo" 
                                            target="_blank" class="btn btn-outline-secondary">
-                                            <i class="fab fa-whatsapp me-2"></i> Konsultasi Gratis
+                                            <i class="fab fa-whatsapp me-2"></i> Konsultasi
                                         </a>
                                     </div>
                                 </div>
@@ -751,13 +774,12 @@
                     <div class="promo-card">
                         <div class="row g-0 flex-lg-row-reverse">
                             <div class="col-lg-6">
-                                <!-- TEMPAT UNTUK FOTO BROSUR PROMO 2 -->
                                 <img src="2333181E-4E8C-4DAE-B647-FA0E96DB0271.png" alt="Promo Kedua NaratifVisual" class="promo-img">
                             </div>
                             <div class="col-lg-6">
                                 <div class="promo-content">
                                     <span class="promo-badge">PROMO 1 HARI</span>
-                                    <h3 class="fw-bold mb-3">Shooting dengan equipment lengkap selama 1 hari</h3>
+                                    <h3 class="fw-bold mb-3">Paket Sewa 1 Hari</h3>
                                     <p class="mb-4">Dapatkan semua equipment yang Anda butuhkan dalam satu paket lengkap dengan harga spesial:</p>
                                     
                                     <ul class="mb-4">
@@ -771,11 +793,11 @@
                                     
                                     <div class="d-flex gap-3 flex-wrap">
                                         <a href="#products" class="btn btn-promo">
-                                            <i class="fas fa-box me-2"></i> Lihat Detail Equipment
+                                            <i class="fas fa-box me-2"></i> Lihat Equipment
                                         </a>
                                         <a href="https://wa.me/628813564384?text=Hai,%20aku%20mau%20konsultasi%20tentang%20promo" 
                                            target="_blank" class="btn btn-outline-secondary">
-                                            <i class="fab fa-whatsapp me-2"></i> Tanya Detail
+                                            <i class="fab fa-whatsapp me-2"></i> Konsultasi
                                         </a>
                                     </div>
                                 </div>
@@ -787,12 +809,54 @@
         </div>
     </section>
 
-    <!-- Portfolio Section - Versi Sederhana dengan Kolaborasi -->
+    <!-- Categories Section - MEMBANTU NAVIGASI PRODUK -->
+    <section class="container mb-5" id="categories">
+        <div class="text-center mb-4">
+            <span class="rental-focus-badge">
+                <i class="fas fa-filter me-2"></i> SEWA EQUIPMENT
+            </span>
+        </div>
+        <h2 class="text-center mb-4">Jenis Equipment</h2>
+        <div class="text-center mb-5">
+            <span class="category-badge active" data-category="all">Semua</span>
+            <span class="category-badge" data-category="tools">Kamera</span>
+            <span class="category-badge" data-category="electronics">Lensa</span>
+            <span class="category-badge" data-category="party">Stabilizer</span>
+            <span class="category-badge" data-category="sports">Lighting</span>
+            <span class="category-badge" data-category="other">Lainnya</span>
+        </div>
+    </section>
+
+    <!-- Products Section - FOKUS UTAMA KEDUA (SEWA) -->
+   
+        </div>
+        <h2 class="text-center mb-5">Equipment Tersedia untuk Disewa</h2>
+        
+        <div class="row" id="productList">
+            <!-- Produk akan dimuat dari JavaScript -->
+        </div>
+        
+        <!-- CTA SEWA -->
+        <div class="text-center mt-5">
+            <p class="mb-3">Butuh bantuan memilih equipment yang tepat?</p>
+            <a href="https://wa.me/628813564384?text=Halo%20NaratifVisual,%20saya%20butuh%20bantuan%20memilih%20equipment%20untuk%20shooting" 
+               target="_blank"
+               class="btn btn-whatsapp btn-lg">
+                <i class="fab fa-whatsapp me-2"></i>
+                Konsultasi Gratis via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section - DIPINDAH SETELAH PRODUK -->
     <section class="portfolio-section" id="portfolio">
         <div class="container">
             <div class="row mb-4">
                 <div class="col-12 text-center">
-                    <h2 class="fw-bold">Portofolio & Kolaborasi</h2>
+                    <span class="rental-focus-badge">
+                        <i class="fas fa-handshake me-2"></i> PORTOFOLIO & KOLABORASI
+                    </span>
+                    <h2 class="fw-bold mt-3">Portofolio & Kolaborasi</h2>
                     <p class="lead">Lihat karya kami dan ajak kami berkolaborasi!</p>
                 </div>
             </div>
@@ -806,9 +870,7 @@
                         
                         <!-- Badge Menerima Client untuk Kolaborasi -->
                         <div class="collaboration-badge">
-                    
                             MENERIMA CLIENT UNTUK KOLABORASI
-                           
                         </div>
                         
                         <p class="portfolio-description">
@@ -856,34 +918,17 @@
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="container mb-5" id="categories">
-        <h2 class="text-center mb-4">Jenis Equipment</h2>
-        <div class="text-center mb-5">
-            <span class="category-badge active" data-category="all">Semua</span>
-            <span class="category-badge" data-category="tools">Kamera</span>
-            <span class="category-badge" data-category="electronics">Lensa</span>
-            <span class="category-badge" data-category="party">Stabilizer</span>
-            <span class="category-badge" data-category="sports">Lighting</span>
-            <span class="category-badge" data-category="other">Lainnya</span>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="container mb-5" id="products">
-        <h2 class="text-center mb-5">Equipment Tersedia untuk Disewa</h2>
-        
-        <div class="row" id="productList">
-            <!-- Produk akan dimuat dari JavaScript -->
-        </div>
-    </section>
-
     <!-- About Section -->
     <section class="container mb-5" id="about">
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <div class="card border-0 shadow">
                     <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <span class="rental-focus-badge">
+                                <i class="fas fa-info-circle me-2"></i> TENTANG KAMI
+                            </span>
+                        </div>
                         <h2 class="text-center mb-4">Tentang Naratif Visual</h2>
                         <p>Naratif Visual adalah platform penyewaan equipment yang bertujuan untuk memudahkan mahasiswa dalam produksi kreatif dengan harga terjangkau. Kami menyediakan berbagai macam equipment dengan production value tinggi.</p>
                         <p>Naratif Visual juga menyediakan pendampingan langsung untuk penggunaan equipment secara langsung di lokasi shooting. Membuka jalan untuk kolaborasi dan membuka ide-ide baru.</p>
@@ -919,16 +964,13 @@
     <footer class="py-5">
         <div class="container">
             <div class="row justify-content-center">
-                <!-- Kolom 1: Logo dan Deskripsi (KANAN) -->
+                <!-- Kolom 1: Logo dan Deskripsi -->
                 <div class="col-lg-5 col-md-6 mb-4 footer-col footer-col-1">
                     <h4 class="footer-logo mb-3">Naratif<span>Visual</span></h4>
                     <p class="mb-4">Platform penyewaan equipment untuk segala kebutuhan shooting dengan harga terjangkau khusus mahasiswa.</p>
-                    <div class="footer-social d-flex">
-                        <!-- Ikon sosial media bisa ditambahkan di sini jika diperlukan -->
-                    </div>
                 </div>
                 
-                <!-- Kolom 2: Kontak (KIRI) -->
+                <!-- Kolom 2: Kontak -->
                 <div class="col-lg-5 col-md-6 mb-4 footer-col footer-col-2">
                     <h5 class="mb-4">Hubungi Kami</h5>
                     <ul class="list-unstyled">
@@ -1011,7 +1053,7 @@
     <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- JavaScript Kustom -->
+    <!-- JavaScript Kustom (sama seperti sebelumnya) -->
     <script>
         // DATA PRODUK
         const products = [
